@@ -6,7 +6,7 @@ import type { Navigation } from '@/interfaces/navigation'
 import { navigations as headerNavigations } from '@/components/navigation/navigation.data'
 import { FooterSectionTitle } from '@/components/footer'
 
-const courseMenu: Array<Navigation> = [
+const portfolioMenu: Array<Navigation> = [
   {
     label: 'UI/UX Design',
     path: '#',
@@ -27,7 +27,7 @@ const courseMenu: Array<Navigation> = [
 
 const pageMenu = headerNavigations
 
-const companyMenu: Array<Navigation> = [
+const aboutMenu: Array<Navigation> = [
   { label: 'Contact Us', path: '#' },
   { label: 'Privacy & Policy', path: '#' },
   { label: 'Term & Condition', path: '#' },
@@ -60,8 +60,8 @@ const FooterNavigation: FC = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} md={4}>
-        <FooterSectionTitle title="Course" />
-        {courseMenu.map(({ label, path }, index) => (
+        <FooterSectionTitle title="Portfolio" />
+        {portfolioMenu.map(({ label, path }, index) => (
           <NavigationItem key={index + path} label={label} path={/* path */ '#'} />
         ))}
       </Grid>
@@ -73,7 +73,7 @@ const FooterNavigation: FC = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <FooterSectionTitle title="About" />
-        {companyMenu.map(({ label, path }, index) => (
+        {aboutMenu.map(({ label, path }, index) => (
           <NavigationItem key={index + path} label={label} path={path} />
         ))}
       </Grid>
