@@ -65,7 +65,8 @@ const HomePopularCourse: FC = () => {
   const sliderConfig: Settings = {
     infinite: true,
     autoplay: true,
-    speed: 300,
+    autoplaySpeed: 6000,
+    speed: 800,
     slidesToShow: matchMobileView ? 1 : 3,
     slidesToScroll: 1,
     prevArrow: <SliderArrow type="prev" />,
@@ -79,7 +80,7 @@ const HomePopularCourse: FC = () => {
 
   return (
     <Box
-      id="popular-course"
+      id="projects"
       sx={{
         pt: {
           xs: 6,
@@ -102,7 +103,7 @@ const HomePopularCourse: FC = () => {
               }}
             >
               <Typography variant="h1" sx={{ mt: { xs: 0, md: -5 }, fontSize: { xs: 30, md: 48 } }}>
-                Most Popular Courses
+                Projects
               </Typography>
             </Box>
           </Grid>
