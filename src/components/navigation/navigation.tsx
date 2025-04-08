@@ -10,7 +10,6 @@ const Navigation: FC = () => {
         <Box
           component={ScrollLink}
           key={destination}
-          activeClass="current"
           to={destination}
           spy={true}
           smooth={true}
@@ -31,8 +30,6 @@ const Navigation: FC = () => {
             }),
 
             '& > div': { display: 'none' },
-
-            '&.current>div': { display: 'block' },
 
             '&:hover': {
               color: 'primary.main',

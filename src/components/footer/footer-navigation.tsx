@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import Link from 'next/link'
 import Grid from '@mui/material/Grid'
-import MuiLink from '@mui/material/Link'
+import Box from '@mui/material/Box'
+import { Link as ScrollLink } from 'react-scroll'
 import { navigations as headerNavigations } from '@/components/navigation/navigation.data'
 import { FooterSectionTitle } from '@/components/footer'
 
@@ -14,18 +14,26 @@ interface NavigationItemProps {
 
 const NavigationItem: FC<NavigationItemProps> = ({ label, path }) => {
   return (
-    <Link href={path} passHref>
-      <MuiLink
-        underline="hover"
-        sx={{
-          display: 'block',
-          mb: 1,
-          color: 'primary.contrastText',
-        }}
-      >
-        {label}
-      </MuiLink>
-    </Link>
+    <Box
+      component={ScrollLink}
+      to={path}
+      spy={true}
+      smooth={true}
+      duration={350}
+      sx={{
+        display: 'block',
+        mb: 1,
+        color: 'primary.contrastText',
+        cursor: 'pointer',
+        fontSize: '1rem',
+        transition: 'color 0.2s ease-in-out',
+        '&:hover': {
+          color: 'secondary.main',
+        },
+      }}
+    >
+      {label}
+    </Box>
   )
 }
 
