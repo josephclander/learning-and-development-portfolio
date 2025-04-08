@@ -8,6 +8,7 @@ const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
 const DynamicHomeFeature = dynamic(() => import('../components/home/feature'))
 const DynamicHomePopularCourse = dynamic(() => import('../components/home/popular-courses'))
 const DynamicHomeTestimonial = dynamic(() => import('../components/home/testimonial'))
+const DynamicHomeVideoShowreel = dynamic(() => import('../components/home/video-showreel'))
 // const DynamicHomeOurMentors = dynamic(() => import('../components/home/mentors'))
 // const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newsletter'))
 
@@ -17,6 +18,7 @@ const Home: NextPageWithLayout = () => {
       <DynamicHomeHero />
       <DynamicHomeFeature />
       <DynamicHomePopularCourse />
+      <DynamicHomeVideoShowreel />
       <DynamicHomeTestimonial />
       {/* <DynamicHomeOurMentors /> */}
       {/* <DynamicHomeNewsLetter /> */}

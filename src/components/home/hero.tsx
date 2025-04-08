@@ -75,7 +75,7 @@ const HomeHero: FC = () => {
                     View Projects
                   </StyledButton>
                 </ScrollLink>
-                <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
+                <ScrollLink to="video-showreel" spy={true} smooth={true} offset={0} duration={350}>
                   <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayCircleFilledIcon />}>
                     Watch Showreel
                   </StyledButton>
