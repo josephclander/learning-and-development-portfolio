@@ -24,7 +24,7 @@ const Home: NextPageWithLayout = () => {
           property="og:description"
           content="Designing content and platforms to make learning clear, accessible, and effective."
         />
-        <meta property="og:image" content="https://josephclander.com/og-image.png" />
+        <meta property="og:image" content="https://josephclander.com/og-image.jpg" />
         <meta property="og:url" content="https://josephclander.com" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
