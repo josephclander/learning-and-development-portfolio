@@ -24,7 +24,7 @@ const HomeFeature: FC = () => {
                 fontSize: { xs: 40, md: 50 },
                 ml: { xs: 0, md: 4 },
                 mt: 2,
-                mb: 3,
+                mb: 6,
                 lineHeight: 1,
                 fontWeight: 'bold',
               }}
@@ -45,10 +45,10 @@ const HomeFeature: FC = () => {
                 <Box
                   sx={{
                     position: 'absolute',
-                    top: { xs: 20, md: 28 },
+                    top: { xs: 40, md: 56 },
                     transform: 'rotate(3deg)',
                     left: 2,
-                    '& img': { width: { xs: 140, md: 175 }, height: 'auto' },
+                    '& img': { width: { xs: 280, md: 350 }, height: 'auto' },
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
