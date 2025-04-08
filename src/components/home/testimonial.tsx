@@ -55,6 +55,7 @@ const HomeTestimonial: FC = () => {
   const sliderConfig: Settings = {
     infinite: true,
     autoplay: true,
+    autoplaySpeed: 6000,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -78,7 +79,7 @@ const HomeTestimonial: FC = () => {
                 fontWeight: 'bold',
               }}
             >
-              Testimonial What our{' '}
+              What my{' '}
               <Typography
                 component="mark"
                 sx={{
@@ -89,20 +90,20 @@ const HomeTestimonial: FC = () => {
                   backgroundColor: 'unset',
                 }}
               >
-                Students{' '}
+                partners{' '}
                 <Box
                   sx={{
                     position: 'absolute',
                     top: { xs: 20, md: 28 },
                     left: 2,
-                    '& img': { width: { xs: 130, md: 175 }, height: 'auto' },
+                    '& img': { width: { xs: 90, md: 120 }, height: 'auto' },
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/headline-curve.svg" alt="Headline curve" />
                 </Box>
               </Typography>
-              Say
+              say
             </Typography>
 
             <StyledSlickContainer>
