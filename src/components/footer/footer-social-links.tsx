@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
+import Image from 'next/image'
 import { SocialLink } from '@/interfaces/social-link'
 
 export const socialLinks: SocialLink[] = [
@@ -41,8 +42,8 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 36,
-        height: 36,
+        width: 65,
+        height: 65,
         borderRadius: '50%',
         color: 'inherit',
         '&:hover': {
@@ -50,14 +51,13 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         },
         '& img': {
           fill: 'currentColor',
-          width: 22,
+          width: 80,
           height: 'auto',
         },
       }}
       href={item.link}
     >
-      {/* eslint-disable-next-line */}
-      <img src={item.icon} alt={item.name + 'icon'} />
+      <Image src={item.icon} alt={item.name + 'icon'} width={50} height={50} />
     </Link>
   </Box>
 )
