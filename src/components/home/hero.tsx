@@ -6,8 +6,8 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
-import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
-import WorkIcon from '@mui/icons-material/Work';
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled'
+import WorkIcon from '@mui/icons-material/Work'
 
 const HomeHero: FC = () => {
   return (
@@ -35,7 +35,7 @@ const HomeHero: FC = () => {
                     lineHeight: 1.3,
                   }}
                 >
-                  Designing content & platforms for {' '}
+                  Designing content & platforms for{' '}
                   <Typography
                     component="mark"
                     sx={{
@@ -84,7 +84,17 @@ const HomeHero: FC = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
-            <Box sx={{ lineHeight: 0 }}>
+            <Box
+              sx={{
+                lineHeight: 0,
+                width: {
+                  xs: '80%', // smaller image on phones and tablets
+                  sm: '70%', // slightly bigger as screen grows
+                  md: '100%', // full size once we're back to desktop
+                },
+                mx: 'auto', // centers the image horizontally
+              }}
+            >
               <Image src="/images/home-hero.png" width={775} height={775} alt="Hero img" />
             </Box>
           </Grid>
