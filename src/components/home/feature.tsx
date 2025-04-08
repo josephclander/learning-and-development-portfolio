@@ -62,7 +62,7 @@ const HomeFeature: FC = () => {
               learning outcomes into your product experience.
             </Typography>
 
-            <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
+            <Grid container spacing={2}>
               {data.map(({ title, description, icon }, index) => (
                 <Grid key={String(index)} item xs={12} md={6}>
                   <Box sx={{ px: 2, py: 1.5, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center' }}>

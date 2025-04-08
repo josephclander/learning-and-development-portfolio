@@ -13,7 +13,7 @@ const HomeHero: FC = () => {
   return (
     <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
-        <Grid container spacing={0} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
+        <Grid container spacing={5} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
           <Grid item xs={12} md={7}>
             <Box
               sx={{
@@ -89,17 +89,6 @@ const HomeHero: FC = () => {
             </Box>
           </Grid>
         </Grid>
-
-        {/* Experience
-        <Box sx={{ boxShadow: 2, py: 4, px: 7, borderRadius: 4 }}>
-          <Grid container spacing={2}>
-            {exps.map((item) => (
-              <Grid key={item.value} item xs={12} md={4}>
-                <ExpItem item={item} />
-              </Grid>
-            ))}
-          </Grid>
-        </Box> */}
       </Container>
     </Box>
   )
