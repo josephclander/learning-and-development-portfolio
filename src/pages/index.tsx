@@ -1,27 +1,39 @@
 import React from 'react'
+import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { NextPageWithLayout } from '@/interfaces/layout'
 import { MainLayout } from '@/components/layout'
-// import { HomeFeature, HomeHero, HomePopularCourse, HomeTestimonial, HomeOurMentors, DynamicHomeNewsLetter } from '@/components/home'
 
 const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
 const DynamicHomeFeature = dynamic(() => import('../components/home/feature'))
 const DynamicHomePopularCourse = dynamic(() => import('../components/home/popular-courses'))
-const DynamicHomeTestimonial = dynamic(() => import('../components/home/testimonial'))
 const DynamicHomeVideoShowreel = dynamic(() => import('../components/home/video-showreel'))
-// const DynamicHomeOurMentors = dynamic(() => import('../components/home/mentors'))
-// const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newsletter'))
+const DynamicHomeTestimonial = dynamic(() => import('../components/home/testimonial'))
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <Head>
+        <title>Joseph Lander – Learning & Development Portfolio</title>
+        <meta
+          name="description"
+          content="Designing content and platforms to make learning clear, accessible, and effective."
+        />
+        <meta property="og:title" content="Joseph Lander – Learning & Development Portfolio" />
+        <meta
+          property="og:description"
+          content="Designing content and platforms to make learning clear, accessible, and effective."
+        />
+        <meta property="og:image" content="https://josephclander.com/og-image.png" />
+        <meta property="og:url" content="https://josephclander.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
       <DynamicHomeHero />
       <DynamicHomeFeature />
       <DynamicHomePopularCourse />
       <DynamicHomeVideoShowreel />
       <DynamicHomeTestimonial />
-      {/* <DynamicHomeOurMentors /> */}
-      {/* <DynamicHomeNewsLetter /> */}
     </>
   )
 }

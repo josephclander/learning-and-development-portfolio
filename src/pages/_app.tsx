@@ -28,10 +28,6 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
 
   return (
     <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>Joseph Lander L&D</title>
-      </Head>
       <MUIProvider>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
