@@ -11,7 +11,14 @@ const HomeFeature: FC = () => {
     <Box id="feature" sx={{ py: { xs: 10, md: 14 }, backgroundColor: 'background.paper' }}>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={5}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              display: { xs: 'none', md: 'block' },
+            }}
+          >
             <Box sx={{ position: 'relative' }}>
               <Image src="/images/home-feature.png" width={650} height={678} quality={97} alt="Feature img" />
             </Box>
