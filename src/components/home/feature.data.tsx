@@ -1,34 +1,30 @@
-import React, { ReactNode } from 'react'
-import ArtTrackIcon from '@mui/icons-material/ArtTrack'
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
-import ContactSupportIcon from '@mui/icons-material/ContactSupport'
+import React from 'react'
+import SchoolIcon from '@mui/icons-material/School'
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary'
+import SettingsIcon from '@mui/icons-material/Settings'
+import SupportAgentIcon from '@mui/icons-material/SupportAgent'
 
-interface Data {
-  title: string
-  description: string
-  icon?: ReactNode
-}
-
-export const data: Data[] = [
+export const data = [
   {
-    title: 'Easy Accessable',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-    icon: <ArtTrackIcon />,
+    title: 'Instructional Design',
+    description: 'Crafted self-paced learning resources including LMS-based assessments and interactive tutorials for diverse audiences.',
+    icon: <SchoolIcon />,
   },
   {
-    title: 'More Affordable Cost',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-    icon: <AttachMoneyIcon />,
+    title: 'Training Video Production',
+    description: 'Produced over 50 instructional videos and onboarding guides, helping users adopt new systems and workflows.',
+    icon: <VideoLibraryIcon />,
   },
   {
-    title: 'Flexible Study Time',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-    icon: <LocalLibraryIcon />,
+    title: 'Learning Platform Management',
+    description: 'Managed platforms like Moodle and React-based hubs to streamline learner access, track progress, and improve engagement.',
+    icon: <SettingsIcon />,
   },
   {
-    title: 'Consultation With Mentor',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-    icon: <ContactSupportIcon />,
+    title: 'Tech Support & Enablement',
+    description: 'Solved tech issues and supported clients with APIs, documentation, clear communication, and tailored training.',
+    icon: <SupportAgentIcon />,
   },
 ]
+
+export default data
