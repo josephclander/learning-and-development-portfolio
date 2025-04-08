@@ -11,21 +11,24 @@ interface Props {
 
 const CourseCardItem: FC<Props> = ({ item }) => {
   return (
-    <Link underline="none" href={item.link}>
-      <Box
-        sx={{
-          px: 1,
-          py: 4,
-        }}
-      >
+    <Link underline="none" href={item.link} sx={{ height: '100%', display: 'block' }}>
+      <Box sx={{ px: 1, py: 4, height: '100%' }}>
         <Box
           sx={{
             p: 2,
             backgroundColor: 'background.paper',
             borderRadius: 4,
-            transition: (theme) => theme.transitions.create(['box-shadow']),
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            transition: (theme) =>
+              theme.transitions.create(['box-shadow', 'transform'], {
+                duration: theme.transitions.duration.short,
+              }),
             '&:hover': {
               boxShadow: 2,
+              transform: 'translateY(-6px)',
             },
           }}
         >
@@ -37,13 +40,14 @@ const CourseCardItem: FC<Props> = ({ item }) => {
               mb: 2,
             }}
           >
-            <Image src={item.cover} width={760} height={760} alt={'Course ' + item.id} />
+            <Image src={item.cover} width={760} height={760} alt={'Project ' + item.id} />
           </Box>
-          <Box sx={{ mb: 2 }}>
-            <Typography component="h2" variant="h5" sx={{ mb: 2, overflow: 'hidden', fontSize: '1.2rem' }}>
+
+          <Box sx={{ flexGrow: 1 }}>
+            <Typography component="h2" variant="h5" sx={{ mb: 2, fontSize: '1.2rem' }}>
               {item.title}
             </Typography>
-            <Typography component="p" sx={{ mb: 2, fontSize: '1rem', color: 'text.secondary' }}>
+            <Typography component="p" sx={{ fontSize: '1rem', color: 'text.secondary' }}>
               {item.description}
             </Typography>
           </Box>

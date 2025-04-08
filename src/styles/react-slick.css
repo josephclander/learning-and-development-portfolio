@@ -130,3 +130,14 @@
   opacity: 0.75;
   color: black;
 }
+/* Force slick-slide to be flex items so children can stretch */
+.slick-slide > div {
+  display: flex !important;
+  height: 100%;
+}
+/* Optional: help the card inside stretch fully */
+.slick-slide > div > a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
