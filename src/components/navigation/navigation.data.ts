@@ -14,6 +14,10 @@ export const navigations: Navigation[] = [
     path: 'video-showreel',
   },
   {
+    label: 'Learning-Demo',
+    path: 'learning-demo',
+  },
+  {
     label: 'Testimonials',
     path: 'testimonial',
   },

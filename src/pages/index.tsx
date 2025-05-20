@@ -8,6 +8,7 @@ const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
 const DynamicHomeFeature = dynamic(() => import('../components/home/feature'))
 const DynamicHomePopularCourse = dynamic(() => import('../components/home/popular-courses'))
 const DynamicHomeVideoShowreel = dynamic(() => import('../components/home/video-showreel'))
+const DynamicLearningDemo = dynamic(() => import('../components/home/learning-demo'))
 const DynamicHomeTestimonial = dynamic(() => import('../components/home/testimonial'))
 
 const Home: NextPageWithLayout = () => {
@@ -33,6 +34,7 @@ const Home: NextPageWithLayout = () => {
       <DynamicHomeFeature />
       <DynamicHomePopularCourse />
       <DynamicHomeVideoShowreel />
+      <DynamicLearningDemo />
       <DynamicHomeTestimonial />
     </>
   )

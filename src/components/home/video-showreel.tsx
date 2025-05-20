@@ -14,7 +14,7 @@ const VideoShowreel: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 'bold', fontSize: { xs: 32, md: 48 } }}
         >
-          Showreel Video
+          Video Showreel
         </Typography>
         <Box
           sx={{
