@@ -46,130 +46,150 @@ const LearningDemo: React.FC = () => {
         color: 'primary.contrastText',
       }}
     >
-      <Container maxWidth="md">
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          gutterBottom
-          sx={{ fontWeight: 'bold', fontSize: { xs: 32, md: 48 } }}
-        >
-          Learning Demo
-        </Typography>
+      <Container maxWidth="lg">
+        {/* Title and Intro */}
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Typography
+              variant="h2"
+              component="h2"
+              align="left"
+              sx={{
+                fontWeight: 'bold',
+                fontSize: { xs: 32, md: 48 },
+                lineHeight: 1.3,
+                mb: { xs: 3, md: 4 },
+              }}
+            >
+              eLearning Authoring:{' '}
+              <Box component="span" display="block" sx={{ color: 'secondary.main' }}>
+                Camera Confidence in 3 Minutes
+              </Box>
+            </Typography>
 
-        <Box sx={{ maxWidth: 640, mx: 'auto' }}>
-          <Typography variant="h6" align="left" sx={{ mb: 4, fontWeight: 400 }}>
-            An example self-paced learning module I produced to help remote workers feel confident on camera. All part
-            of my work to support my clients to be better versions of themselves.
-          </Typography>
-        </Box>
+            <Typography
+              variant="h6"
+              align="left"
+              sx={{
+                fontWeight: 400,
+                color: 'primary.contrastText',
+                maxWidth: 640,
+                mb: 4,
+              }}
+            >
+              An example self-paced learning module I produced to help remote workers feel confident on camera. All part
+              of my work to support my clients to be better versions of themselves.
+            </Typography>
+          </Grid>
+        </Grid>
 
+        {/* Video */}
         <Box
           sx={{
-            position: 'relative',
-            overflow: 'hidden',
             width: '100%',
-            paddingTop: '56.25%',
+            position: 'relative',
             borderRadius: 2,
             boxShadow: 3,
+            overflow: 'hidden',
             mb: 6,
           }}
         >
-          <iframe
-            title="Learning Demo"
-            src="https://iseazy.com/dl/cb4f38d4cc0b4c55aaf90adc2792c1d9"
-            allowFullScreen
-            loading="lazy"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              border: 0,
-            }}
-          />
-        </Box>
-
-        <Typography
-          component="h2"
-          align="center"
-          sx={{
-            fontSize: { xs: 32, md: 44 },
-            fontWeight: 'bold',
-            mb: { xs: 8, md: 10 }, // more margin below
-            lineHeight: 1.2,
-          }}
-        >
-          How It Was{' '}
-          <Typography
-            component="mark"
+          <Box
             sx={{
+              paddingTop: '56.25%',
               position: 'relative',
-              color: 'common.white',
-              fontSize: 'inherit',
-              fontWeight: 'inherit',
-              backgroundColor: 'unset',
+              width: '100%',
             }}
           >
-            Built
             <Box
+              component="iframe"
+              src="https://iseazy.com/dl/cb4f38d4cc0b4c55aaf90adc2792c1d9"
+              title="Learning Demo"
+              allowFullScreen
+              loading="lazy"
               sx={{
                 position: 'absolute',
-                top: { xs: 28, md: 40 },
-                left: '50%',
-                transform: 'translateX(-50%)',
-                '& img': {
-                  width: { xs: 120, md: 160 },
-                  height: 'auto',
-                },
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+              }}
+            />
+          </Box>
+        </Box>
+
+        {/* How I Built It Title */}
+        <Grid container spacing={7} alignItems="center" sx={{ mb: 4 }}>
+          <Grid item xs={12} md={3}>
+            <Typography
+              variant="h2"
+              component="h2"
+              align="left"
+              sx={{
+                fontWeight: 'bold',
+                fontSize: { xs: 32, md: 44 },
+                mb: { xs: 2, md: 4 },
+                lineHeight: 1.3,
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/headline-curve.svg" alt="Underline decoration" />
-            </Box>
-          </Typography>
-        </Typography>
+              Design Process
+            </Typography>
+          </Grid>
 
-        <Grid container spacing={4}>
-          {data.map(({ title, description, icon }, index) => (
-            <Grid key={String(index)} item xs={12} sm={6}>
-              <Box
-                sx={{
-                  px: 3,
-                  py: 4,
-                  borderRadius: 3,
-                  boxShadow: 2,
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  backgroundColor: 'background.paper',
-                  color: 'text.primary',
-                }}
-              >
-                <Box
-                  sx={{
-                    mb: 2,
-                    backgroundColor: 'secondary.main',
-                    borderRadius: '50%',
-                    height: 48,
-                    width: 48,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'primary.contrastText',
-                  }}
-                >
-                  {icon}
-                </Box>
-                <Typography variant="h6" sx={{ mb: 1, fontWeight: 'bold' }}>
-                  {title}
-                </Typography>
-                <Typography sx={{ color: 'text.secondary' }}>{description}</Typography>
-              </Box>
-            </Grid>
-          ))}
+          {/* Cards */}
+          <Grid item xs={12} md={9}>
+            <Box> 
+              <Grid container spacing={2}>
+                {data.map(({ title, description, icon }, index) => (
+                  <Grid key={String(index)} item xs={12} sm={6}>
+                    <Box
+                      sx={{
+                        px: 2,
+                        py: 1.5,
+                        boxShadow: 1,
+                        borderRadius: 4,
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        backgroundColor: 'background.paper',
+                        color: 'text.primary',
+                        height: '100%',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          mr: 2,
+                          backgroundColor: 'secondary.main',
+                          borderRadius: '50%',
+                          height: 40,
+                          width: 40,
+                          minWidth: 40,
+                          display: 'flex',
+                          alignSelf: 'center',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'primary.contrastText',
+                          '& svg': {
+                            fontSize: 22,
+                          },
+                        }}
+                      >
+                        {icon}
+                      </Box>
+                      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <Typography variant="h6" sx={{ fontSize: '1rem', mb: 1, fontWeight: 'bold' }}>
+                          {title}
+                        </Typography>
+                        <Typography sx={{ fontSize: '0.95rem', color: 'text.secondary', lineHeight: 1.4 }}>
+                          {description}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </Box>
