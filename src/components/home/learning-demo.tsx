@@ -4,6 +4,11 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 
+import useMediaQuery from '@mui/material/useMediaQuery'
+import Button from '@mui/material/Button'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import { useTheme } from '@mui/material/styles'
+
 import InsightsIcon from '@mui/icons-material/Insights'
 import MapIcon from '@mui/icons-material/Map'
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark'
@@ -37,6 +42,9 @@ const data = [
 ]
 
 const LearningDemo: React.FC = () => {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
     <Box
       id="learning-demo"
@@ -83,41 +91,60 @@ const LearningDemo: React.FC = () => {
           </Grid>
         </Grid>
 
-        {/* Video */}
-        <Box
-          sx={{
-            width: '100%',
-            position: 'relative',
-            borderRadius: 2,
-            boxShadow: 3,
-            overflow: 'hidden',
-            mb: 6,
-          }}
-        >
+        {/* Embedded Content */}
+        {isMobile ? (
+          <Box sx={{ textAlign: 'left', mb: 6 }}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              endIcon={<OpenInNewIcon />}
+              href="https://iseazy.com/dl/cb4f38d4cc0b4c55aaf90adc2792c1d9"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ mb: 1 }}
+            >
+              Open Module in Fullscreen
+            </Button>
+            <Typography variant="body2" sx={{ color: 'primary.contrastText', opacity: 0.8 }}>
+              Best experienced fullscreen on mobile devices.
+            </Typography>
+          </Box>
+        ) : (
           <Box
             sx={{
-              paddingTop: '56.25%',
-              position: 'relative',
               width: '100%',
+              position: 'relative',
+              borderRadius: 2,
+              boxShadow: 3,
+              overflow: 'hidden',
+              mb: 6,
             }}
           >
             <Box
-              component="iframe"
-              src="https://iseazy.com/dl/cb4f38d4cc0b4c55aaf90adc2792c1d9"
-              title="Learning Demo"
-              allowFullScreen
-              loading="lazy"
               sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
+                paddingTop: '56.25%',
+                position: 'relative',
                 width: '100%',
-                height: '100%',
-                border: 0,
               }}
-            />
+            >
+              <Box
+                component="iframe"
+                src="https://iseazy.com/dl/cb4f38d4cc0b4c55aaf90adc2792c1d9"
+                title="Learning Demo"
+                allowFullScreen
+                loading="lazy"
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
+              />
+            </Box>
           </Box>
-        </Box>
+        )}
 
         {/* How I Built It Title */}
         <Grid container spacing={7} alignItems="center" sx={{ mb: 4 }}>
@@ -139,7 +166,7 @@ const LearningDemo: React.FC = () => {
 
           {/* Cards */}
           <Grid item xs={12} md={9}>
-            <Box> 
+            <Box>
               <Grid container spacing={2}>
                 {data.map(({ title, description, icon }, index) => (
                   <Grid key={String(index)} item xs={12} sm={6}>
