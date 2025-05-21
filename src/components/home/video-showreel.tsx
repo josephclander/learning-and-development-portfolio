@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Chip from '@mui/material/Chip'
+import Grid from '@mui/material/Grid'
 
 const categories = [
   'Interviews',
@@ -16,20 +17,116 @@ const categories = [
 const VideoShowreel: React.FC = () => {
   return (
     <Box id="video-showreel" sx={{ py: { xs: 8, md: 12 }, backgroundColor: 'background.default' }}>
-      <Container maxWidth="md">
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          sx={{ fontWeight: 'bold', fontSize: { xs: 32, md: 44 }, mb: 4 }}
+      <Container maxWidth="lg">
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { xs: 'flex-start', md: 'stretch' },
+          }}
         >
-          Video Showreel
-        </Typography>
+          <Grid item xs={12} md={7}>
+            <Box>
+              <Typography
+                variant="h2"
+                component="h2"
+                align="left"
+                sx={{
+                  fontWeight: 'bold',
+                  fontSize: { xs: 32, md: 48 },
+                  lineHeight: 1.3,
+                  mb: { xs: 5, md: 7 },
+                }}
+              >
+                Showreel: 6 Video Types{' '}
+                <Box component="span" display="block">
+                  to{' '}
+                  <Typography
+                    component="mark"
+                    sx={{
+                      position: 'relative',
+                      color: 'primary.main',
+                      fontSize: 'inherit',
+                      fontWeight: 'inherit',
+                      backgroundColor: 'unset',
+                    }}
+                  >
+                    Boost Learning
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: { xs: 28, md: 36 },
+                        left: 0,
+                        transform: 'none',
+                        '& img': {
+                          width: { xs: 140, md: 180 },
+                          height: 'auto',
+                        },
+                      }}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/images/headline-curve.svg" alt="Underline decoration" />
+                    </Box>
+                  </Typography>
+                </Box>
+              </Typography>
 
-        <Typography variant="h6" align="left" sx={{ mb: 4, fontWeight: 400, maxWidth: 640, mx: 'auto' }}>
-          A quick run-through of my portfolio in the instructional content space, including interviews, explainers, and
-          platform walkthroughs created for clients and internal teams.
-        </Typography>
+              <Typography
+                variant="h5"
+                align="left"
+                sx={{
+                  color: 'text.secondary',
+                  fontWeight: 400,
+                  maxWidth: 640,
+                  mb: 0,
+                }}
+              >
+                A 40-second overview of the kinds of educational content I create, including interviews, explainers, and
+                platform walkthroughs created for clients and internal teams.
+              </Typography>
+            </Box>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              display: 'flex',
+              alignItems: { xs: 'flex-start', md: 'flex-end' },
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: { xs: 'flex-start', md: 'flex-end' },
+                gap: 1.5,
+                maxWidth: { xs: '100%', md: 480 },
+                mt: { xs: 4, md: 0 },
+              }}
+            >
+              {categories.map((label, index) => (
+                <Chip
+                  key={index}
+                  label={label}
+                  variant="outlined"
+                  color="primary"
+                  sx={{
+                    fontWeight: 600,
+                    px: 2.5,
+                    py: 1,
+                    borderRadius: '999px',
+                    fontSize: 16,
+                    borderWidth: 2,
+                    borderStyle: 'solid',
+                  }}
+                />
+              ))}
+            </Box>
+          </Grid>
+        </Grid>
 
         <Box
           sx={{
@@ -39,7 +136,7 @@ const VideoShowreel: React.FC = () => {
             paddingTop: '56.25%',
             borderRadius: 2,
             boxShadow: 3,
-            mb: 4,
+            mt: 6,
           }}
         >
           <iframe
@@ -56,36 +153,6 @@ const VideoShowreel: React.FC = () => {
               border: 0,
             }}
           />
-        </Box>
-
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: 1.5,
-            maxWidth: 600,
-            mx: 'auto',
-            mt: 2,
-          }}
-        >
-          {categories.map((label, index) => (
-            <Chip
-              key={index}
-              label={label}
-              variant="outlined"
-              color="primary"
-              sx={{
-                fontWeight: 600,
-                px: 2.5,
-                py: 1,
-                borderRadius: '999px',
-                fontSize: 16,
-                borderWidth: 2,
-                borderStyle: 'solid',
-              }}
-            />
-          ))}
         </Box>
       </Container>
     </Box>
